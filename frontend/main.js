@@ -11,8 +11,10 @@ function getData(){
 function createElement(json){
     let result = ""
     result += "<li>"
-    result += `<h3>${json.name}</h3>`
-    result += `<p>${json.description}</p>`
+    // Da forma à seguir eu não preciso saber os campos do objeto json
+    Object.keys(json).map(key => {
+        result += `<p>${json[key]}</p>`
+    })
     result += "</li>"
     return result
 }
